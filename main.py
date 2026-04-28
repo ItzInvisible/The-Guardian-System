@@ -1,9 +1,12 @@
 import time
 from classes import enforcement, suspect, droneid, drone_status
+from map import create_city, add_alert, display_grid
 
 # This program is a simple text-based menu for the Guardian System.
 # It allows the user to list drones, check or change a drone status,
 # and view the known suspects and enforcement officers.
+
+city_grid = create_city()
 
 def status(drone_input):
     # Check whether the entered drone ID exists, then show its current status.
@@ -61,7 +64,8 @@ def show_menu():
     print("3. List suspects")
     print("4. List enforcement officers")
     print("5. Check status of all drones")
-    print("6. Exit")
+    print("6. View City Map")
+    print("7. Exit")
     print("-----------------------------------------")
 
 
@@ -69,7 +73,7 @@ def main():
     # Loop until the user chooses to exit.
     while True:
         show_menu()
-        choice = input("Choose an option (1-6): ").strip()
+        choice = input("Choose an option (1-7): ").strip()
 
         if choice == '1':
             list_drones()
@@ -82,15 +86,32 @@ def main():
             list_suspects()
         elif choice == '4':
             list_enforcement()
+            print("Press type 'quit' to return to the menu.")
+            if input().lower() == 'quit':
+                continue
+            print("Returning to menu...")
+            time.sleep(1)
         elif choice == '5':
             check_status()
         elif choice == '6':
+            print("Displaying city map...")
+            time.sleep(1)
+            print("-----------------------------------------")
+            display_grid(city_grid, (0, 0))  # Example drone position
+            print("------------------------------------------")
+            print("Press type 'quit' to return to the menu.")
+            if input().lower() == 'quit':
+                continue
+            print("Returning to menu...")
+            time.sleep(1)
+        elif choice == '7':
             print("Exiting Guardian System. Goodbye.")
             break
         else:
-            print("Invalid selection. Please choose a number from 1 to 6.")
+            print("Invalid selection. Please choose a number from 1 to 7.")
 
 
 if __name__ == '__main__':
     main()
+
 
