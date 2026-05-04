@@ -1,5 +1,16 @@
+"""
+Classes Module for Guardian System
+
+This module defines the core data structures used throughout the system:
+- Drone identifiers and their statuses
+- Known suspects
+- Enforcement officers
+
+All data is stored in dictionaries for easy access and modification.
+"""
+
 droneid = {
-	"Drone 1A": "DRN1A",
+    "Drone 1A": "DRN1A",  # Drone label to ID mapping
     "Drone 1B": "DRN1B",
     "Drone 2A": "DRN2A",
     "Drone 2B": "DRN2B",
@@ -8,7 +19,7 @@ droneid = {
 }
 
 drone_status = {
-    "DRN1A": "offline",
+    "DRN1A": "offline",  # Initial status for each drone (offline/online/patrol)
     "DRN1B": "offline",
     "DRN2A": "offline",
     "DRN2B": "offline",
@@ -17,12 +28,13 @@ drone_status = {
 }
 
 suspect = {
-    "Suspect 1": "Giovanni",
-    "Suspect 2": "Lillain"
+    "Suspect 1": "Giovanni",  # Known suspects with labels and names
+    "Suspect 2": "Lillain",
+    "Suspect 3": "Marcello",
 }
 
 
 enforcement = {
-    "ENFORCE1": "Officer Stevenson",
-    "ENFORCE2": "Officer Darling"
+    "ENFORCE1": "Officer Stevenson",  # Enforcement officers with IDs and names
+    "ENFORCE2": "Officer Darling",
 }
