@@ -23,6 +23,6 @@ suspect = {
 
 
 enforcement = {
-    "Enforcement 1": "Officer Stevenson",
-    "Enforcement 2": "Officer Darling"
+    "ENFORCE1": "Officer Stevenson",
+    "ENFORCE2": "Officer Darling"
 }
